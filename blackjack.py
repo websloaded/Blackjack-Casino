@@ -91,10 +91,10 @@ def blackjack_ronda(ronda):  # Función que maneja una ronda del juego.
         mostrar_manos(mano_jugador, mano_crupier)  # Muestra cartas del jugador y crupier (oculto).
         if valor_mano(mano_jugador) >= 21:  # Si el jugador llega a 21 o más.
             break  # Termina su turno.
-        decision = input("¿Quieres pedir carta? (s/n): ").lower()  # Pregunta si pide carta.
-        if decision == 's':  # Si responde que sí.
+        decision = input("¿Quieres pedir carta? (si/no): ").lower()  # Pregunta si pide carta.
+        if decision == 'si':  # Si responde que sí.
             mano_jugador.append(carta_aleatoria())  # Añade nueva carta al jugador.
-        else:  # Si responde que no.
+        elif decision == 'no':  # Si responde que no.
             break  # Se planta.
 
     jugador_total = valor_mano(mano_jugador)  # Calcula el total del jugador.
@@ -124,7 +124,7 @@ def blackjack_ronda(ronda):  # Función que maneja una ronda del juego.
                 crupier_total = valor_mano(mano_crupier)  # Recalcula puntos.
 
 
-     """--- Mostrar manos finales ---"""
+    """--- Mostrar manos finales ---"""
     mostrar_manos(mano_jugador, mano_crupier, oculto=False)  # Muestra todas las cartas al final.
 
 
