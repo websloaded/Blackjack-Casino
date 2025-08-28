@@ -87,15 +87,25 @@ def blackjack_ronda(ronda):  # Función que maneja una ronda del juego.
     
 
     """--- Turno del jugador ---"""
-    while True:  # Bucle para el turno del jugador.
+    while True:
         mostrar_manos(mano_jugador, mano_crupier)  # Muestra cartas del jugador y crupier (oculto).
         if valor_mano(mano_jugador) >= 21:  # Si el jugador llega a 21 o más.
             break  # Termina su turno.
-        decision = input("¿Quieres pedir carta? (si/no): ").lower()  # Pregunta si pide carta.
-        if decision == 'si':  # Si responde que sí.
-            mano_jugador.append(carta_aleatoria())  # Añade nueva carta al jugador.
-        elif decision == 'no':  # Si responde que no.
-            break  # Se planta.
+
+    """---Pedimos decisión y validamos---"""
+    while True:
+        decision = input("¿Quieres pedir carta? (si/no): ").lower()  # Pregunta al jugador
+        if decision in ['si', 'no']:  # Solo aceptamos "si" o "no"
+            break  # Entrada válida, salimos del bucle de validación
+        else:
+            print("Respuesta inválida. Escribe 'si' o 'no'.")  # Mensaje de error
+
+    
+    if decision == 'si':  # Si el jugador quiere carta
+        mano_jugador.append(carta_aleatoria())  # Añade carta nueva
+    elif decision == "no":  # Si el jugador dice "no"
+        break  # Se planta
+
 
     jugador_total = valor_mano(mano_jugador)  # Calcula el total del jugador.
 
