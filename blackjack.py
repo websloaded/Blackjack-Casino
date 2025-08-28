@@ -1,3 +1,29 @@
+"""
+Juego de Blackjack en Python
+
+📌 ¿Qué es Blackjack?
+Es un juego de cartas muy popular en los casinos. El objetivo es acercarse lo más posible a 21 
+sin pasarse. 
+- Las cartas numéricas valen su número. 
+- J, Q y K valen 10. 
+- El As vale 1 u 11 según convenga. 
+- Si con las dos primeras cartas llegas a 21, eso es "Blackjack".
+
+📌 Reglas principales que seguimos en este script:
+- El jugador puede pedir carta ("hit") o plantarse ("stand").
+- El crupier pide cartas hasta tener al menos 17.
+- Ganará quien esté más cerca de 21 sin pasarse.
+- Hemos añadido un patrón especial: 2 rondas gana el jugador, 2 rondas gana el crupier, 
+  y se repite.
+
+Este archivo está comentado línea por línea para entenderlo fácilmente.
+"""
+
+
+#------------------------------CODIGO-----------------------------
+
+
+
 import random  # Importa la librería random para generar cartas al azar.
 
 # ---------------- FUNCIONES DE APOYO ----------------
